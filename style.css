@@ -100,3 +100,27 @@ header a:hover
     color: gainsboro;
     font-weight: bold;
 }
+
+#boxes {
+    margin-top: 20px;
+}
+
+#boxes .box {
+    float: left;
+    width:30%;
+    padding: 10px;
+    text-align: center;
+}
+
+#boxes .box img {
+    width: 90px;
+
+}
+
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: white ;
+    text-align: center;
+    background-color: rgb(110, 0, 0);
+}
