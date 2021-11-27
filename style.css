@@ -169,7 +169,7 @@ footer {
     font-style: italic;
 }
 
-table{
+.table-content1{
     font-family: 'Times New Roman', Times, serif;
     border-collapse: collapse;
     width: 85%;
@@ -178,12 +178,12 @@ table{
     margin-right: auto;
 }
 
-td {
+.table-content1 td{
     border: 1px solid;
     text-align: left;
     padding: 8px;
 }
-th {
+.table-content1 th {
     border: 1px solid;
     border-color: black;
     text-align: left;
@@ -192,6 +192,6 @@ th {
     color:rgb(70, 102, 70)
 }
 
-tr:nth-child(even){
+.table-content1 tr:nth-child(even){
     background-color: rgb(133, 165, 133);
 }
