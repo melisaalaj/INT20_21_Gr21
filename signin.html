@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>signin</title>
 </head>
 <body>
@@ -230,7 +231,10 @@ input {
 	height: 40px;
 	width: 40px;
 }
-</style>		
+</style>
+
+<div class="container" id="container">
+<div class="form-container sign-up-container">		
     
 <form action="">
 	<h1>Create Account</h1>
@@ -277,6 +281,19 @@ input {
 	</div>
 </div>
 </div>
+
+<script type="text/javascript">
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});
+</script>
 
 </body>
 </html>
