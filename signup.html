@@ -3,9 +3,8 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<title>Your skin care guide | Sign up</title>
-    </head>
-    <body>
-        <style>
+
+		<style>
             *{
 	           box-sizing: border-box;
 	        }
@@ -112,9 +111,12 @@
 }
 
         </style>
+    </head>
+    <body>
+
 
         <div class="container">
-            <form action="">
+            <form action="" id="myForm">
                 <h1>Create an account</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fa fa-facebook"></i></a>
@@ -124,12 +126,30 @@
                 <span>or use your email for registration</span>
                 <input type="text" name="full name" placeholder="Full Name">
                 <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="Password">
+				<input type="password" name="verifypassword" id="verifypassword" placeholder="Verify Password">
 
                 <button>Sign up</button>
             </form>
-        
-
         </div>
+
+		<script>
+			function chkPasswords() {
+			var pass = document.getElementById("password");
+			var ipass = document.getElementById("verifypassword");
+			if(pass.value == "") {
+				alert("You did not enter a password \n" + "Please enter one now");
+				return false;
+			}
+			if (pass.value != ipass.value) {
+				alert("The two passwords you entered are not the same \n" + "Please re-enter both now");
+				return false;
+			}
+			else 
+			return true; }
+
+			document.getElementById("verifypassword").onblur = chkPasswords; 
+			document.getElementById("myForm").onsubmit = chkPasswords;
+		</script>
     </body>
 </html>
