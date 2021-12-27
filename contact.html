@@ -1,114 +1,108 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<title>Your skin care guide | Contact</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
 
-
-<style>
-  a[href^="mailto"]::before {
-    content: "📧 ";
-}
-
-a[href^="tel"]::before {
-    content: "📞 ";
-}
-
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.format {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-</style>
+   
 </head>
 <body>
+    <style>
+        *{
+    font-family:Arial;
+}
+body{
+    background-image: url("showcase.jpg");
+    margin:0;
+}
+#overlay {
+        width:100%;
+        height: 100%;
+        position:fixed;
+        }
 
+form{
+    max-width:550px ;
+    width: 90%;
+    background-color: white;
+    margin:17vh auto 0 auto;
+    padding:40px;
+    border-radius: 6px;
+    box-sizing: 3px;
+}
+h1{
+    margin:0;
+    text-align:center;
+  }
+  label{
+    display:block;
+    margin:20px 0;
+  }
+  input,textarea{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    outline:none;
+    resize:none;
+    border:none;
+    border-bottom:2px solid rgb(233, 228, 228);
+   }
+   input[type="text"]:focus, textarea:focus{
+       border-bottom: 1px solid rgb(255,0,106) ;
+   }
+   textarea::-webkit-scrollbar{
+       width:4px;
+   }
+   .center{
+       text-align: center;
 
-<header>
-        <div class="container">
-            <div id="branding"> 
-                <h1>Your skin care <span class="highlight">guide</span> </h1>
+   }
+   input[type="submit"]{
+       margin-top:80px;
+       width:100%;
+       max-width:200%;
+       background: rgb(255,0,106);
+       color:white;
+       font-size: 17px;
+       cursor: pointer;
+       border-radius: 3px;
+
+   }
+   .error{
+    color:red;
+
+}
+.error-border{
+    border-bottom:1px solid red;
+}
+#success{
+    color:green;
+}
+    </style>
+    <div id="overlay">
+        <form onsubmit="event.preventDefault();validateForm()">
+            <h1>Contact Us</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your name">
+            <small class="error"></small>
+            
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Your email">
+            <small class="error"></small>
+            
+            <label for="message">Message:</label>
+            <textarea id="message"  placeholder="Your message" rows="6"></textarea>
+            <small class="error"></small>
+
+            <div class="center">
+                <input type="submit" value="Send Message">
             </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="signin.html">Sign in</a></li>
-                </ul>
-            </nav>
-        </div>
-</header>
 
-<div class="container">
-<h3>Contact Form</h3>
 
-<div class="format">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </form>
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-      <option value="Albania">Albania</option>
-    </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    
-     <input type="checkbox" name="service" 
-    value="terms of servise" checked="checked" /> 
-    <label for="terms of service">I agree with the terms of service</label>
-     <br> <br>
-
-    <input type="submit" value="Submit">
-  </form>
- <p>Contact the author of this page:</p>
-
-<address>
-  <a href="mailto:fiek.uni-pr.edu">fiek.uni-pr.edu</a><br>
-  <a href="tel:038554896">(038) 554-896</a>
-</address>
-
-</div>
-</div>
-
+        <script src="javascript.js"></script>
 </body>
 </html>
