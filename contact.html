@@ -68,39 +68,25 @@ h1{
        border-radius: 3px;
 
    }
-   .error{
-    color:red;
-
-}
-.error-border{
-    border-bottom:1px solid red;
-}
-#success{
-    color:green;
-}
     </style>
     <div id="overlay">
-        <form onsubmit="event.preventDefault();validateForm()">
+        <form >
             <h1>Contact Us</h1>
             <label for="name">Name:</label>
             <input type="text" id="name" placeholder="Your name">
-            <small class="error"></small>
             
             <label for="email">Email:</label>
             <input type="text" id="email" placeholder="Your email">
-            <small class="error"></small>
             
             <label for="message">Message:</label>
             <textarea id="message"  placeholder="Your message" rows="6"></textarea>
-            <small class="error"></small>
 
             <div class="center">
                 <input type="submit" value="Send Message">
-            </div>
 
+            </div>
 
         </form>
 
-        <script src="javascript.js"></script>
 </body>
 </html>

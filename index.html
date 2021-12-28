@@ -6,6 +6,56 @@
         <title>Your skin care guide | Home</title>
 
         <style>
+                .table-content2 {
+                    border-collapse: collapse;
+                    margin: 25px 0;
+                    font-size: 1em;
+                    min-width: 400px;
+                    margin: auto;
+                    border-radius: 5px 5px 0 0;
+                    overflow: hidden;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.158);
+                    text-align: center;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+                }
+
+                .table-content2 thead{
+                    background-color: rgb(196, 132, 130) ;
+                    color: white;
+                    text-align: center;
+                    font-weight: bold;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                }
+
+                .table-content2 th 
+                {
+                    padding: 12px 15px;
+                }
+                .table-content2 td
+                {
+                    padding: 12px 15px;
+                    border-left: 1px dashed;
+                    border-color: rgba(165, 99, 99, 0.295);
+                }
+
+                .img-zoom-container {
+                    position: relative; 
+                }
+
+                .img-zoom-lens {
+                    position: absolute;
+                    border: 1px solid #d4d4d4;
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .img-zoom-result {
+                    border: 1px solid #d4d4d4;
+                    width: 300px;
+                    height: 300px;
+                }
+            
             .table-content{
                 border-collapse: collapse;
                 margin: 25px 0;
@@ -89,7 +139,7 @@
         </style>
     </head>
 
-    <body>
+    <body style="background-image: url('./background.jpg');">
         <header>
             <div class="container">
                 <div id="branding"> 
@@ -166,6 +216,75 @@
                     </li>
                 </ul>
 
+                <h1 class="page-title"> Type of skin blemeshis</h1>
+
+
+                <div class="img-zoom-container" align="center">
+                    <img id="myimage"  src="skin.jpg" width="400" height="340" alt="Girl">
+                    <div id="myresult" class="img-zoom-result"></div>
+                </div>
+
+                <script>
+                    function imageZoom(imgID, resultID) {
+                    var img, lens, result, cx, cy;
+                    img = document.getElementById(imgID);
+                    result = document.getElementById(resultID);
+                    /* Create lens: */
+                    lens = document.createElement("DIV");
+                    lens.setAttribute("class", "img-zoom-lens");
+                    /* Insert lens: */
+                    img.parentElement.insertBefore(lens, img);
+                    /* Calculate the ratio between result DIV and lens: */
+                    cx = result.offsetWidth / lens.offsetWidth;
+                    cy = result.offsetHeight / lens.offsetHeight;
+                    /* Set background properties for the result DIV */
+                    result.style.backgroundImage = "url('" + img.src + "')";
+                    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+                    /* Execute a function when someone moves the cursor over the image, or the lens: */
+                    lens.addEventListener("mousemove", moveLens);
+                    img.addEventListener("mousemove", moveLens);
+                    /* And also for touch screens: */
+                    lens.addEventListener("touchmove", moveLens);
+                    img.addEventListener("touchmove", moveLens);
+                    function moveLens(e) {
+                    var pos, x, y;
+              /* Prevent any other actions that may occur when moving over the image */
+                    e.preventDefault();
+              /* Get the cursor's x and y positions: */
+                    pos = getCursorPos(e);
+              /* Calculate the position of the lens: */
+                    x = pos.x - (lens.offsetWidth / 2);
+                    y = pos.y - (lens.offsetHeight / 2);
+              /* Prevent the lens from being positioned outside the image: */
+                    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+                    if (x < 0) {x = 0;}
+                    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+                    if (y < 0) {y = 0;}
+              /* Set the position of the lens: */
+                    lens.style.left = x + "px";
+                    lens.style.top = y + "px";
+              /* Display what the lens "sees": */
+                    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+                }
+                    function getCursorPos(e) {
+                    var a, x = 0, y = 0;
+                    e = e || window.event;
+              /* Get the x and y positions of the image: */
+                    a = img.getBoundingClientRect();
+              /* Calculate the cursor's x and y coordinates, relative to the image: */
+                   x = e.pageX - a.left;
+                   y = e.pageY - a.top;
+              /* Consider any page scrolling: */
+                   x = x - window.pageXOffset;
+                   y = y - window.pageYOffset;
+                   return {x : x, y : y};
+                }
+            }
+          
+                    imageZoom("myimage", "myresult");
+            </script>
+        
+
                 <h1 class="page-title" id="sunscreen"> Sunscreen</h1>
                 <p>
                     Every skin care expert agrees on one thing, that sunscreen is the most crutial skin-care
@@ -196,14 +315,25 @@
                     skin without stripping essential, healthy oils. Take it easy with exfoliating scrubs (use only once a week) and avoid those 
                     with crushed walnut shells or abrasive ingredients.
                     <br>
-                    For everyday cleansing, here's what to look for:
                 </p>
-                <table class="table-content1">
+
+                <p id="demo1"></p>
+
+                <script>
+                    let text = "For everyday cleansing, here's what to look for: ";
+                    let result = text.toString();
+                    
+                    document.getElementById("demo1").innerHTML = result; 
+                </script>
+
+                <table class="table-content">
+                    <thead>
                     <tr>
                         <th>Skin type </th>
                         <th> Cleanser </th>
                         <TH> What it does </TH>
                     </tr>
+                    </thead>
                     <tr>
                         <td>Oily or ance-prone</td>
                         <td>Foaming liquid</td>
@@ -279,12 +409,14 @@
                     activities, such as washing, can strip natural hydrators from surface. <br>
                     How to pick a moisturizer:
                 </p>
-                <table class="table-content1">
+                <table class="table-content">
+                    <thead>
                     <tr>
                         <th> Skin Type</th>
                         <th> Moisturizer</th>
                         <th>What it does</th>
                     </tr>
+                    </thead>
                     <tr>
                         <td>Oily</td>
                         <td>Gel moisturizer</td>
@@ -319,7 +451,7 @@
                     Usually a facial mask product is to be used for a short period of time on the face. It takes only a few seconds to apply, and then you just have to wait for 15 to 20 minutes and then wash it off,
                     some you can sleep <br>
                     Applying a face mask also helps you to relax. You get the time to relax, while your face mask is working. This will help you to de-stress and that alone can make you look and feel better! 
-                    Whether you use a cream or a sheet mask, you’ll feel great during the process. <br>
+                    Whether you use a cream or a sheet mask, you'll feel great during the process. <br>
                     It is simple and easy to apply a face mask and it gives you immense benefits. It is highly recommended to include it to your skin care routine. <br>
                     The benefits of face masks:
                     <ul>
@@ -333,52 +465,13 @@
                         gradually result in firmer, tighter, fresher looking skin.</li>
                      </ul>
                 </p>
-                <h2 class="page-subt">Homemade face masks</h2>
-                <h3>Face mask to balance dry skin</h3>
-                <p>
-                    If you've exhausted your stash of hyaluronic acid serums and your dry skin still isn't getting the memo, then Escapada Health Co-Founder, Emilia Herting's DIY face mask recipe is the one for you. <br>
-                    <h3>What you need: </h3>
-                    <ul>
-                        <li>6 tsp clay</li>
-                        <li>2 tsp aloe vera juice</li>
-                        <li>1 tsp natural raw honey</li>
-                        <li>A splash of natural spring water</li>
-                    </ul> 
-                    <h3>How it works</h3>
-                    'The best way to balance dry skin is with the right foods and moisture,' explains Herting. 'This refreshing spring mask will hydrate your skin from within. For calming effects simply add a few drops of 
-                    lavender essential oil to the mix. Lavender is probably the best known essential oil; its distinctive scent can help relax the nervous system and it is particularly useful for relieving symptoms of restlessness, irritability and insomnia.' 
 
-                </p>
-
-                <h3>DIY Face Mask to target hyper-pigmentation</h3>
-                <p>
-                    If you're not keen on throwing every acid and vitamin in the book at your pigmentation, then founder of inclusive wellness platform thy.self, Chloe Pierre, has got you sorted with her DIY face mask recipe that targets just that. 
-                    <h3>What you need:</h3>
-                    <ul>
-                        <li>1 tbsp of fresh turmeric</li>
-                        <li>1 tbsp of fresh lemon juice</li>
-                        <li>add water to make paste</li>
-                        <li>1 tbsp of honey or 1/2 a beaten avocado if you have used juices turmeric</li>
-                    </ul> 
-                    <h3>How it works</h3> 
-                    'My go-to face mask recipe uses small amounts of fresh turmeric and lemon juice to pinpoint hyper pigmentation,' explains Pierre.
-                    'Turmeric as an ingredient has been clinically proven to address hyper pigmentation, reduce skin irritation and wrinkles over the course of at least 4 weeks. It's worth noting turmeric originates from India and South Asia. It is a member of the ginger family. <br> 
-                    'Simply mix up, apply to specific areas (wear gloves to protect your hands) and leave on for 3 minutes before rinsing off. Repeat at least twice a week for five weeks to see results.
-                </p>
-
-                <h3>DIY Face Mask to calm your skin</h3>
-                <p>
-                    Between eleven step skincare routines, city smog and hay fever, our skin can get overwhelmed and irritation and redness is inevitable. Let nutritionist Rosemary Ferguson's home-made face mask recipe soothe and calm your skin in an instant...
-                    <h3>What you need:</h3>
-                    <ul>
-                        <li>1 teaspoon honey</li>
-                        <li>1 teaspoon coconut oil</li>
-                        <li>1/4 ripe avocado</li>
-                        <li>2 drops of lavander oil</li>
-                    </ul>
-                    <h3>How it works:</h3>
-                    Like one big glow in a bowl, this delicious-sounding face mask delivers deep hydration from the coconut oil, gives your skin a hit of antioxidants with the honey and soothes redness with the lavender oil. Mix it up and paint it on with a face mask brush for the ultimate at-home spa experience
-                </p>
+            
+            <h2 class="page-subt">5 skin brightening face and body masks</h2>
+            <div align="center" >
+            <video width="420" height="340" controls >
+               <source src="video1.mp4" type="video/mp4">
+             </video>
 
                 <h1 class="page-title">Acids and how to use them: </h1>
 
@@ -413,6 +506,48 @@
                     </tr>
                 </tbody>
                 </table>
+
+                <h1 class="page-title">A guide on when to use products: </h1>
+                <table class="table-content2">
+                    <thead>
+                        <tr>
+                            <th>Day care</th>
+                            <th>Night care</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td>CLEANSER</td>
+                            <td>MAKEUP REMOVER</td>
+                        </tr>
+                        <tr>
+                            <td>TONER</td>
+                            <td>CLEANSER</td>
+                        </tr>
+                        <tr>
+                            <td>ANTIOXIDANT SERUM</td>
+                            <td>TONER</td>
+                        </tr>
+                        <tr>
+                            <td>EYE BALM / CREAM</td>
+                            <td>SERUM / TREATMENT</td>
+                        </tr>
+                        <tr>
+                            <td>ACNE SPOT TREATMENT</td>
+                            <td>ACNE SPOT TREATMENT</td>
+                        </tr>
+                        <tr>
+                            <td>MOISTURIZER</td>
+                            <td>EYE CREAM</td>
+                        </tr>
+                        <tr>
+                            <td>SUNSREEN</td>
+                            <td>MOISTURIZER</td>
+                        </tr>
+                        <tr>
+                            <td>PRIMER / MAKEUP</td>
+                            <td>LIP MASK</td>
+                        </tr>
+                    </table>
 
                 </div>
             </article>
@@ -450,9 +585,8 @@
             currentTime = getDateTime();
             document.getElementById("digital-clock").innerHTML = currentTime;
         }, 1000);
-    
-    
         </script>
+
         <div id="digital-clock"></div>
         
         <footer>

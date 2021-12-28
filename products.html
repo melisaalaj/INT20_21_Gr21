@@ -65,7 +65,7 @@
                 }
         </style>
     </head>
-    <body>
+    <body style="background-image: url('./background.jpg');">
         <header>
             <div class="container">
                 <div id="branding"> 
@@ -164,6 +164,23 @@
                 </div>
 
                     <h1 class="page-title" id="sunscreen">Sunscreens we recommend</h1>
+
+                    <img src="Sunscrenn.jpg" id="images" width="350" height="370">
+                    <button style = "background-color: rgb(63, 148, 63); color:white; border-radius: 5px; box-shadow: gray;"onclick="ChangeImg()">Next</button>
+
+                    <script> 
+                    var myImage = document.getElementById("images");
+                    var imageArrays = ["Sunscrenn.jpg","biotherm.jpg","Attitude.jpg"]
+                    imageIndex = 1;
+
+                    function ChangeImg() {
+                        myImage.setAttribute("src", imageArrays[imageIndex]);
+                        imageIndex++;
+                        if(imageIndex > 2) {imageIndex = 0}
+
+                    }
+                    </script>
+
                     <h2 class="page-subt">Avene Sunscreen SPF 50+</h2>
 
                     <a href="https://gjirafamall.com/kozmetike/kujdes-per-lekure-4/perkujdesje-ndaj-diellit-2/ndaj-diellit-2/krem-22/krem-mbrojtes-nga-dielli-avene-50-50-ml#SearchResults"
