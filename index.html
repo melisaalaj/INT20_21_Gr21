@@ -5,6 +5,17 @@
         <link rel="stylesheet" href="style.css">
         <title>Your skin care guide | Home</title>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+        $("#hide").click(function(){
+        $("#hidep").hide();
+         });
+        $("#show").click(function(){
+        $("#hidep").show();
+        });
+        });
+</script>
         <style>
                 .table-content2 {
                     border-collapse: collapse;
@@ -129,12 +140,47 @@
                 padding: 7px;
             }
     
-            button {
+            #searchbar {
                 all: unset;
                 cursor: pointer;
                 width: 44px;
                 height: 44px;
             }
+
+            #hide {
+            background:#bfffb9;
+            color: grey;
+            border:1pxsolid#eee;
+            border-radius:20px;
+            box-shadow:5px5px5px#eee;
+            text-shadow:none;
+            }
+            #hide:hover {
+            background:#17532b;
+            color:#fff;
+            border:1pxsolid#eee;
+            border-radius:20px;
+            box-shadow:5px5px5px#eee;
+            text-shadow:none;
+            }          
+
+            #show {
+            background:#ffb9b9;
+            color: grey;
+            border:1pxsolid#eee;
+            border-radius:20px;
+            box-shadow:5px5px5px#eee;
+            text-shadow:none;
+            }
+            #show:hover {
+            background:#531717;
+            color:#fff;
+            border:1pxsolid#eee;
+            border-radius:20px;
+            box-shadow:5px5px5px#eee;
+            text-shadow:none;
+            }      
+
         </style>
     </head>
 
@@ -169,7 +215,7 @@
             <div id="searchbar">
                 <form role="search" id="form">
                     <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
-                    <button>
+                    <button id="searchbar">
                         <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
                       </button>
                     </form>
@@ -215,75 +261,6 @@
                     </li>
                 </ul>
 
-                <h1 class="page-title"> Acne type </h1>
-
-
-                <div class="img-zoom-container" align="center">
-                    <img id="myimage"  src="skin.jpg" width="400" height="340" alt="Girl">
-                    <div id="myresult" class="img-zoom-result"></div>
-                </div>
-
-                <script>
-                    function imageZoom(imgID, resultID) {
-                    var img, lens, result, cx, cy;
-                    img = document.getElementById(imgID);
-                    result = document.getElementById(resultID);
-                    /* Create lens: */
-                    lens = document.createElement("DIV");
-                    lens.setAttribute("class", "img-zoom-lens");
-                    /* Insert lens: */
-                    img.parentElement.insertBefore(lens, img);
-                    /* Calculate the ratio between result DIV and lens: */
-                    cx = result.offsetWidth / lens.offsetWidth;
-                    cy = result.offsetHeight / lens.offsetHeight;
-                    /* Set background properties for the result DIV */
-                    result.style.backgroundImage = "url('" + img.src + "')";
-                    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-                    /* Execute a function when someone moves the cursor over the image, or the lens: */
-                    lens.addEventListener("mousemove", moveLens);
-                    img.addEventListener("mousemove", moveLens);
-                    /* And also for touch screens: */
-                    lens.addEventListener("touchmove", moveLens);
-                    img.addEventListener("touchmove", moveLens);
-                    function moveLens(e) {
-                    var pos, x, y;
-              /* Prevent any other actions that may occur when moving over the image */
-                    e.preventDefault();
-              /* Get the cursor's x and y positions: */
-                    pos = getCursorPos(e);
-              /* Calculate the position of the lens: */
-                    x = pos.x - (lens.offsetWidth / 2);
-                    y = pos.y - (lens.offsetHeight / 2);
-              /* Prevent the lens from being positioned outside the image: */
-                    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
-                    if (x < 0) {x = 0;}
-                    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
-                    if (y < 0) {y = 0;}
-              /* Set the position of the lens: */
-                    lens.style.left = x + "px";
-                    lens.style.top = y + "px";
-              /* Display what the lens "sees": */
-                    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
-                }
-                    function getCursorPos(e) {
-                    var a, x = 0, y = 0;
-                    e = e || window.event;
-              /* Get the x and y positions of the image: */
-                    a = img.getBoundingClientRect();
-              /* Calculate the cursor's x and y coordinates, relative to the image: */
-                   x = e.pageX - a.left;
-                   y = e.pageY - a.top;
-              /* Consider any page scrolling: */
-                   x = x - window.pageXOffset;
-                   y = y - window.pageYOffset;
-                   return {x : x, y : y};
-                }
-            }
-          
-                    imageZoom("myimage", "myresult");
-            </script>
-        
-
                 <h1 class="page-title" id="sunscreen"> Sunscreen</h1>
                 <p>
                     Every skin care expert agrees on one thing, that sunscreen is the most crutial skin-care
@@ -296,7 +273,8 @@
                 <p>
                     Whether you are spending the aftenoon in the sun or not, make sure you are applying enought sunscreen
                     for it to actually be effective. An average person in a bathing suit needs a full ounce to cover all 
-                    exposed areas, including your face, every 2 hours. <br>
+                    exposed areas, including your face, every 2 hours. <br> </p>
+                <p id="hidep">
                     If your are at the beach for 6 hours in the sun you will need at least a 3-ounce bottle of sunscreen. <br>
                     Even if you're not spending the afternoon at the pool, you're still guarenteed to come into contact with 
                     UV rays through the window or ny peeking outside. Studies show that daily use of sunscreen can significantly
@@ -306,6 +284,9 @@
                     to work. If your sunscreen has thicker zink oxide, you may be able to get away with less sunscreen, but of you're unsure,
                     don't risk it!
                 </p>
+
+                <button id="hide">Hide</button>
+                <button id="show">Show</button>
                 <h1 class="page-title" id="cleansing"> Cleansing</h1>
                 <p>
                     Washing your face is the most basic and essential step of any routine. Wash twice a day, morning and night, to avid 
