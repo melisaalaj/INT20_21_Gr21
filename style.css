@@ -9,17 +9,17 @@ body {
 }
 
 .container {
-    width:80%;
+    width:75%;
     margin:auto;
     overflow: hidden;
 }
 
 header {
-    background: rgb(65, 95, 65);    
-    color: white;  
+    background: rgb(66, 84, 116);    
+    color: rgb(255, 255, 255);  
     padding-top: 30px;
     min-height: 70px ;  
-    border-bottom: rgb(110, 0, 0) 3px solid;         
+    border-bottom: rgb(202, 112, 154) 3px solid;         
 }
 
 header a{
@@ -54,7 +54,7 @@ header nav{
 }
 
 header .highlight, header .current a{
-    color:rgb(228, 2, 2);
+    color:rgb(228, 2, 89);
     font-weight: bold;
 }
 
@@ -85,7 +85,7 @@ header a:hover
 #signup {
     padding: 15px;
     color: white;
-    background: rgb(65, 95, 65) ;
+    background: rgb(65, 76, 95) ;
 }
 
 #signup a{
@@ -122,12 +122,12 @@ footer {
     margin-top: 20px;
     color: white ;
     text-align: center;
-    background-color: rgb(110, 0, 0);
+    background-color: rgb(202, 112, 154);
 }
 
 #nav_p{
-    background: rgb(110, 0, 0);    
-    color: white;  
+    background: rgb(202, 112, 154);    
+    color: rgb(255, 255, 255);  
     padding: 5px;
     min-height: 10px ;
     text-align: center;
@@ -158,14 +158,14 @@ footer {
 }
 
 .page-title {
-    color: rgb(65, 95, 65);
+    color: rgb(70, 65, 95);
     font-style: italic;
     font-size: 1.4em;
 }
 
 .page-subt {
     font-size: 1.3em;
-    color: rgb(110, 0, 0);
+    color: rgb(136, 44, 105);
     font-style: italic;
 }
 
@@ -189,9 +189,9 @@ footer {
     text-align: left;
     padding: 8px;
     font-style: italic;
-    color:rgb(70, 102, 70)
+    color:rgb(73, 70, 102)
 }
 
 .table-content1 tr:nth-child(even){
-    background-color: rgb(133, 165, 133);
+    background-color: rgb(133, 142, 165);
 }

@@ -4,6 +4,23 @@
         <meta charset="uft-8">
         <title>Your skin care guide | Welcome</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+        $(document).ready(function(){
+          $(".box").click(function(){
+            var div = $(".box");  
+            div.animate({left: '100px'}, "slow");
+            div.animate({fontSize: '1.3em'}, "slow");
+          });
+        });
+
+        $(document).ready(function(){
+        $("#contact").click(function(){
+        $("#contact").hide(1000);
+        alert("Are you sure you want to contact us ? ");
+            });
+        });
+        </script> 
     </head>
     <body>
         <header>
@@ -15,7 +32,7 @@
                     <ul>
                         <li class="current"><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" id="contact">Contact</a></li>
                         <li><a href="signin.html">Sign in</a></li>
                     </ul>
                 </nav>
@@ -41,17 +58,17 @@
                 <div class="box">
                     <img src="./noun_makeup powder_1674990.png" alt="">
                     <h3>Daily care</h3>
-                    <p>Show some love to your skin daily.</p>
+                    <p>It's a SKIN-VESMENT.</p>
                 </div>
                 <div class="box">
                     <img src="./noun_Skincare_1675003.png" alt="">
                     <h3>Weekly care</h3>
-                    <p>Show some love to your skin weekly.</p>
+                    <p>Your skin is your best accessory.</p>
                 </div>
                 <div class="box">
                     <img src="./noun_Skincare_4044808.png" alt="">
                     <h3>Monthly care</h3>
-                    <p>Show some love to your skin monthly.</p>
+                    <p>Your skin deserves the world.</p>
                 </div>
             </div>
         </section>

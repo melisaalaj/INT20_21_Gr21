@@ -4,6 +4,24 @@
         <meta charset="uft-8">
         <link rel="stylesheet" href="style.css">
         <title>Your skin care guide | Products</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+        $(document).ready(function(){
+          $(".price").click(function(){
+            var div = $(".price");  
+            div.animate({left: '100px'}, "slow");
+            div.animate({fontSize: '1.5em'}, "slow");
+          });
+        });
+        
+        
+        $(document).ready(function(){
+          $("#hide").click(function(){
+            $("#opening").slideToggle("slow");
+          });
+        });
+        
+        </script>
 
         <style>
             .float-img {
@@ -46,7 +64,7 @@
             }
 
             .table-content2 thead{
-                background-color: rgb(129, 44, 41) ;
+                background-color: rgb(202, 112, 154) ;
                 color: white;
                 text-align: center;
                 font-weight: bold;
@@ -63,6 +81,22 @@
                 border-left: 1px dashed;
                 border-color: rgba(165, 99, 99, 0.295);
                 }
+            #next {
+                background:#ffb9b9;
+                color: grey;
+                border:1pxsolid#eee;
+                border-radius:20px;
+                box-shadow:5px5px5px#eee;
+                text-shadow:none;
+            }
+            #next:hover{
+                background:#831347;
+                color:#fff;
+                border:1pxsolid#eee;
+                border-radius:20px;
+                box-shadow:5px5px5px#eee;
+                text-shadow:none;
+            }  
         </style>
     </head>
     <body style="background-image: url('./background.jpg');">
@@ -97,30 +131,32 @@
         <section>
             <article>  
                 <div class="container">
+                    <center><h1 id="hide" style ="font-size: 1.4em; color: rgb(119, 34, 84); font-family: 'Times New Roman', Times, serif; font-style: italic;" >Products guide: </h1> </center>
+                    <div id="opening">
                     <div class="float-dl">
                     <dl>
-                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(110, 0, 0);">Sunscreens</dt>
+                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(136, 44, 105);">Sunscreens</dt>
                         <dd>Aneve Sunscreen</dd>
                         <dd>Biotherm Sunscreen</dd>
                         <dd>Attitude Sunscreen</dd>
-                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(110, 0, 0);">Cleansers</dt>
+                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(136, 44, 105);">Cleansers</dt>
                         <dd>CeraVe Hydrating Cleanser</dd>
                         <dd>La Roche-Posay Cleanser</dd>
                         <dd>Lancaster</dd>
-                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(110, 0, 0);">Toners</dt>
+                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(136, 44, 105);">Toners</dt>
                         <dd>Babor Toner</dd>
                         <dd>Bioderma Toner</dd>
-                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(110, 0, 0);">Serums</dt>
+                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(136, 44, 105);">Serums</dt>
                         <dd>The Ordinary - Niacinamide 10% + Zinc 1%</dd>
                         <dd>The Ordinary - Retinol 1%</dd>
-                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(110, 0, 0);">Moisturizer</dt>
+                        <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(136, 44, 105);">Moisturizer</dt>
                         <dd>CeraVe Moisturizing Cream</dd>
                         <dd>Netrogena Hydro Boost</dd>
                     </dl>
                     </div> 
             
                 <div class="float-table">
-                <h1 style ="font-size: 1.1 em; color: rgb(119, 36, 34); font-family: 'Times New Roman', Times, serif; font-style: italic;">A guide on when to use products: </h1>
+                <h1 style ="font-size: 1.1 em; color: rgb(136, 44, 105); font-family: 'Times New Roman', Times, serif; font-style: italic;">A guide on when to use products: </h1>
                 <table class="table-content2">
                     <thead>
                         <tr>
@@ -162,11 +198,12 @@
                         </tr>
                     </table>
                 </div>
+                </div>
 
                     <h1 class="page-title" id="sunscreen">Sunscreens we recommend</h1>
 
                     <img src="Sunscrenn.jpg" id="images" width="350" height="370">
-                    <button style = "background-color: rgb(63, 148, 63); color:white; border-radius: 5px; box-shadow: gray;"onclick="ChangeImg()">Next</button>
+                    <button id="next" onclick="ChangeImg()">Next</button>
 
                     <script> 
                     var myImage = document.getElementById("images");
@@ -223,7 +260,7 @@
                         <li style="list-style-type: circle;">Boasts a waterproof and nurturing formula</li>
                         <li style="list-style-type: circle;">Penetrates quickly into skin without leaving a white sticky film</li>
                         <li style="list-style-type: circle;">Contains patented Mexoryl SX and XL filters to protect skin against UVB and UVA rays</li>
-                    </ul> <br> <br> <br> <br>
+                    </ul> <br> 
 
                     <h2 class="page-subt">Attitude Sunscreen 30 </h2>
                     
@@ -343,7 +380,7 @@
                         <li>CLEANSING Natural Plant Based Pure Thermal Spring Water Toning Essence For Face. Best Toning Essence for Day and Night - For A More Refreshed Appearance</li>
                         <li>Helps prevent congestion. A deep-action cleansing mask with an exfoliating effect to refine the complexion</li>
                         <li>Apply thick layer to clean skin for 5-10 min. Wet fingertips, massage in circles, rinse with water. Use2x a week</li>
-                    </ul> <br> <br>
+                    </ul> <br>
 
                     <h2 class="page-subt">Bioderma Toner</h2>
 
@@ -447,7 +484,7 @@
                         <li>Hyaluronic acid, a hydrator found naturally in the skin, attracts moisture and locks it in. 100% alcohol free</li>   
                         <li>Daily face moisturizer features a non-comedogenic formula that is oil-free, and is from a dermatologist-recommended brand</li>
                         <li>Unique face moisturizer absorbs quickly like a gel, so you can wear it under makeup, but provides long-last and intense moisturizing power of a cream</li>
-                    </ul> <br>
+                    </ul> 
 
                     <h2 class="page-subt">CeraVe Moisturizing Cream</h2>
 

@@ -9,12 +9,21 @@
         <script>
         $(document).ready(function(){
         $("#hide").click(function(){
-        $("#hidep").hide();
+        $(".hidep").hide(1000);
          });
         $("#show").click(function(){
-        $("#hidep").show();
+        $(".hidep").show(1000);
         });
         });
+
+        $(document).ready(function(){
+        $("#toggle").click(function(){
+        $("#togglep").toggle(1000);
+        });
+        });
+</script>
+</head>
+<body>
 </script>
         <style>
                 .table-content2 {
@@ -32,7 +41,7 @@
                 }
 
                 .table-content2 thead{
-                    background-color: rgb(196, 132, 130) ;
+                    background-color: #ce7b97 ;
                     color: white;
                     text-align: center;
                     font-weight: bold;
@@ -76,11 +85,12 @@
                 border-radius: 5px 5px 0 0;
                 overflow: hidden;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.158);
+                width:75%;
     
             }
 
             .table-content thead tr {
-                background-color: rgb(132, 160, 132) ;
+                background-color: rgb(106, 122, 151) ;
                 color: white;
                 text-align: left;
                 font-weight: bold;
@@ -101,7 +111,7 @@
             }
 
             .table-content tbody tr:last-of-type {
-                border-bottom: 2px rgb(132, 160, 132);
+                border-bottom: 2px rgb(132, 146, 160);
             }
 
             form {
@@ -111,7 +121,7 @@
                 border-radius: 5px;
                 display: flex;
                 flex-direction: row;
-                border-color: rgba(216, 0, 0, 0.349);
+                border-color: rgba(0, 86, 216, 0.349);
                 border-style: solid;
                 margin-top: 13px;
 
@@ -133,7 +143,7 @@
             }
     
             svg {
-                color: rgba(255, 0, 0, 0.349);
+                color: rgba(0, 119, 255, 0.438);
                 fill: currentColor;
                 width: 22px;
                 height: 22px;
@@ -148,7 +158,7 @@
             }
 
             #hide {
-            background:#bfffb9;
+            background:#b9d7ff;
             color: grey;
             border:1pxsolid#eee;
             border-radius:20px;
@@ -156,7 +166,7 @@
             text-shadow:none;
             }
             #hide:hover {
-            background:#17532b;
+            background:#173653;
             color:#fff;
             border:1pxsolid#eee;
             border-radius:20px;
@@ -164,7 +174,7 @@
             text-shadow:none;
             }          
 
-            #show {
+            #show , #toggle {
             background:#ffb9b9;
             color: grey;
             border:1pxsolid#eee;
@@ -172,8 +182,8 @@
             box-shadow:5px5px5px#eee;
             text-shadow:none;
             }
-            #show:hover {
-            background:#531717;
+            #show:hover, #toggle:hover  {
+            background:#831347;
             color:#fff;
             border:1pxsolid#eee;
             border-radius:20px;
@@ -274,7 +284,7 @@
                     Whether you are spending the aftenoon in the sun or not, make sure you are applying enought sunscreen
                     for it to actually be effective. An average person in a bathing suit needs a full ounce to cover all 
                     exposed areas, including your face, every 2 hours. <br> </p>
-                <p id="hidep">
+                <p class="hidep">
                     If your are at the beach for 6 hours in the sun you will need at least a 3-ounce bottle of sunscreen. <br>
                     Even if you're not spending the afternoon at the pool, you're still guarenteed to come into contact with 
                     UV rays through the window or ny peeking outside. Studies show that daily use of sunscreen can significantly
@@ -287,6 +297,7 @@
 
                 <button id="hide">Hide</button>
                 <button id="show">Show</button>
+
                 <h1 class="page-title" id="cleansing"> Cleansing</h1>
                 <p>
                     Washing your face is the most basic and essential step of any routine. Wash twice a day, morning and night, to avid 
@@ -361,11 +372,11 @@
                         <li> <strong>Rose water and green tea</strong> to calm irritation and reduce redness with an anti-inflammatory effect.</li>
                         <li> <strong>Vitamin E and C</strong> to fight daily exposure to free radicals that can age your skin</li>
                     </ul>
-                    <br>
                     Tones should be done after cleansing and before putting on anything else. The traditional application method is to saturate a cotton pad and pass it over your face. But some 
                     argue that applying toner with clean hands is the most efficient. Just pour a few drops in your palm, then swipe it on. Most formulas can be used morning and night, but you might 
                     want to use those with exfoliating acids only at night or every other day.
                 </p>
+
                 <h1 class="page-title" id="serums">Serums</h1>
                 <p>
                     Serums are powerful skill allies. Filled with concentrated doses of active ingredients, these elixirs can mitigate a number of issued, from dark spots to wrinkles. Even if you don't have any 
@@ -376,12 +387,15 @@
                         <li> <strong>Retinol, vitamin B3, peptides</strong> to stimulate the production of collagen and elastin, proteins in the body that helps prevent lines and skin sagging.</li>
                         <li> <strong>Colloidal sulfur, nicinamide</strong> to calm redness and irritation by decreasing inflammation, and improve acne with its antimicrobial effects.</li>
                     </ul>
+                </p>
+                <p id="togglep">
                     If you have multiple concerns, you might want to use mulitple formulas. You should treat different areas with different products, maybe you will use a vitamin C serum all over but then dab on another for 
                     hyperpigmentation on just a few spots. Just run any combination by your dermatologist to avoid any potential reactions. <br> <br>
                     To save time, don't try mixing a serum into your moisturizer. This lessens the ability of the serum to absorb effectively. Products should be applied one by ome. <br> <br>
                     Not all serums are applied with the same frequency. This varies with the ingredients. For example antioxidants are better used in the morning because they give you additional protection from the enviroment,
                     and most of us don't use enough sunscreen as it is. Retinols are not sun-stable so they are best used at night. So make sure to read the label intructions carefully.
                 </p>
+                <button id="toggle">Contiue</button>
                 <h1 class="page-title" id="moisturizing">Moisturizing</h1>
                 <p>
                     The most basic function of a moisturizer is to hydrate and soften the skin. Moisturizers assist in preventing water loss through the outer layers of skin, they can also complement the naturally found protective
