@@ -18,7 +18,7 @@
                     var toAdd = $('input[name=ListItem]').val();
                      $('ol').append('<li>' + toAdd + '</li>');
                 });
-            });
+        });
         
         </script>
 
@@ -228,23 +228,25 @@
                 </div>
                 </div>
 
-                    <h1 class="page-title" id="sunscreen">Sunscreens we recommend</h1>
+                    <h1 class="page-title" id="sunscreen">Products we recommend</h1>
 
                     <img src="Sunscrenn.jpg" id="images" width="350" height="370" style="border-radius: 35px; box-shadow: 4px 4px rgb(212, 208, 208);">
                     <button id="next" onclick="ChangeImg()">Next</button>
 
                     <script> 
                     var myImage = document.getElementById("images");
-                    var imageArrays = ["Sunscrenn.jpg","biotherm.jpg","Attitude.jpg"]
+                    var imageArrays = ["Sunscrenn.jpg","biotherm.jpg","Attitude.jpg","CeraVE.jpg","LaRoche.jpg","lancaster.jpg",
+                        "babor.jpg","bioderma.jpg","Ordinary.jpg","neutrogena.jpg","CeraVeM.jpg"]
                     imageIndex = 1;
 
                     function ChangeImg() {
                         myImage.setAttribute("src", imageArrays[imageIndex]);
                         imageIndex++;
-                        if(imageIndex > 2) {imageIndex = 0}
+                        if(imageIndex > 10) {imageIndex = 0}
 
                     }
                     </script>
+                    <h1 class="page-title" id="sunscreen">Sunscreens we recommend</h1>
 
                     <h2 class="page-subt">Avene Sunscreen SPF 50+</h2>
 
