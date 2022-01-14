@@ -5,18 +5,9 @@
         <link rel="stylesheet" href="style.css">
         <title>Your skin care guide | Products</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script> 
+        <script>  
         $(document).ready(function(){
-          $(".price").click(function(){
-            var div = $(".price");  
-            div.animate({left: '100px'}, "slow");
-            div.animate({fontSize: '1.5em'}, "slow");
-          });
-        });
-        
-        
-        $(document).ready(function(){
-          $("#hide").click(function(){
+          $("#hide").mouseenter(function(){
             $("#opening").slideToggle("slow");
           });
         });
@@ -29,10 +20,20 @@
                 margin-right: 30px; 
                 margin-bottom: 5px;
                 padding: 2px;
+                border-radius: 35px;
+                box-shadow: 4px 4px rgb(194, 190, 190);
             }
 
-            ul {
-                font-weight: bold;
+            .unl {
+                list-style: none;            
+            }
+            .unl li::before {
+            content: "\2022";
+            color: rgb(175, 88, 132);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
             }
 
             .price {
@@ -132,7 +133,7 @@
             <article>  
                 <div class="container">
                     <center><h1 id="hide" style ="font-size: 1.4em; color: rgb(119, 34, 84); font-family: 'Times New Roman', Times, serif; font-style: italic;" >Products guide: </h1> </center>
-                    <div id="opening">
+                    <div id="opening" style="display: none;">
                     <div class="float-dl">
                     <dl>
                         <dt style="font-family: 'Times New Roman', Times, serif; font-size: 1.2em; font-weight: bold; font-style: italic; color: rgb(136, 44, 105);">Sunscreens</dt>
@@ -202,7 +203,7 @@
 
                     <h1 class="page-title" id="sunscreen">Sunscreens we recommend</h1>
 
-                    <img src="Sunscrenn.jpg" id="images" width="350" height="370">
+                    <img src="Sunscrenn.jpg" id="images" width="350" height="370" style="border-radius: 35px; box-shadow: 4px 4px rgb(212, 208, 208);">
                     <button id="next" onclick="ChangeImg()">Next</button>
 
                     <script> 
@@ -232,9 +233,9 @@
                         Skin Type: Dry <br>
                     </p>
 
-                    <h3>About this item: </h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item: </h3>
 
-                    <ul>
+                    <ul class="unl">
                         <li>Ideal balance between pleasure and security</li>
                         <li>Light and non greasy texture: invisible, non-oily texture for particularly pleasant application</li>
                         <li>Specially formulated for dry skin</li>
@@ -254,12 +255,12 @@
                         Skin type: Dry
                     </p>
 
-                    <h3> About this item: </h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;"> About this item: </h3>
 
-                    <ul>
-                        <li style="list-style-type: circle;">Boasts a waterproof and nurturing formula</li>
-                        <li style="list-style-type: circle;">Penetrates quickly into skin without leaving a white sticky film</li>
-                        <li style="list-style-type: circle;">Contains patented Mexoryl SX and XL filters to protect skin against UVB and UVA rays</li>
+                    <ul class="unl">
+                        <li >Boasts a waterproof and nurturing formula</li>
+                        <li >Penetrates quickly into skin without leaving a white sticky film</li>
+                        <li >Contains patented Mexoryl SX and XL filters to protect skin against UVB and UVA rays</li>
                     </ul> <br> 
 
                     <h2 class="page-subt">Attitude Sunscreen 30 </h2>
@@ -276,8 +277,8 @@
                         Sun protection: 30 SPF
                     </p>
 
-                    <h3>About this item: </h3>
-                    <ul>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item: </h3>
+                    <ul class="unl">
                         <li>Mineral face stick sunscreen that works: UVA and UVB protection, made with non-nano zinc oxide and plant- and mineral-based ingredient</li>
                         <li>Handy stick format: Makes applying sunscreen on the go easier</li>
                         <li>Dermatologically tested: Hypoallergenic and fragrance-free formula</li>
@@ -300,12 +301,12 @@
                         Scent: 	Fragrance free
                     </p>
 
-                    <h3>About this item:</h3>
-                    <ul>
-                        <li style="list-style-type: circle;">[ DAILY FACE WASH ] Gentle cleansing lotion with hyaluronic acid, ceramides, and glycerin to help hydrate skin without stripping moisture</li>
-                        <li style="list-style-type: circle;"> [ NON-FOAMING CLEANSER ] Moisturizing facial cleanser with a lotion-like consistency feels smooth as it cleanses, even on sensitive, dry skin. </li>
-                        <li style="list-style-type: circle;">[ ESSENTIAL CERAMIDES ] Ceramides are found naturally in the skin and make up 50% of the lipids in the skin barrier.</li>
-                        <li style="list-style-type: circle;"> [ DERMATOLOGIST RECOMMENDED ] CeraVe Skincare is developed with dermatologists and has products suitable for dry skin, sensitive skin, oily skin, acne-prone, and more</li>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item:</h3>
+                    <ul class="unl">
+                        <li>[ DAILY FACE WASH ] Gentle cleansing lotion with hyaluronic acid, ceramides, and glycerin to help hydrate skin without stripping moisture</li>
+                        <li> [ NON-FOAMING CLEANSER ] Moisturizing facial cleanser with a lotion-like consistency feels smooth as it cleanses, even on sensitive, dry skin. </li>
+                        <li>[ ESSENTIAL CERAMIDES ] Ceramides are found naturally in the skin and make up 50% of the lipids in the skin barrier.</li>
+                        <li> [ DERMATOLOGIST RECOMMENDED ] CeraVe Skincare is developed with dermatologists and has products suitable for dry skin, sensitive skin, oily skin, acne-prone, and more</li>
                     </ul>
 
                     <h2 class="page-subt">La Roche-Posay Cleanser</h2>
@@ -324,9 +325,9 @@
                         Skin Type: Acne Prone,Oily,Sensitive <br> 
                     </p>
 
-                    <h3>About this item: </h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item: </h3>
 
-                    <ul>
+                    <ul class="unl">
                         <li>Value size. Gel face wash for oily skin tested on acne-prone skin. Gently cleanses impurities while respecting skin's pH balance.</li>
                         <li>Foaming face wash cleanser gently cleanses oily skin without over drying</li>
                         <li>Massage face wash gently with lukewarm water to form a rich lather. Rinse with water. Gently pat off.</li>
@@ -347,14 +348,14 @@
                         Use for: Face <br>
                     </p>
 
-                    <h3>About this item: </h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item: </h3>
 
-                    <ul>
-                        <li style="list-style-type: circle;">Lancaster</li>
-                        <li style="list-style-type: circle;">Skincare</li>
-                        <li style="list-style-type: circle;">Lancaster - Cleanser</li>
-                        <li style="list-style-type: circle;">Softening Cleansing Milk</li>
-                        <li style="list-style-type: circle;">400ml/13.5oz</li>
+                    <ul class="unl">
+                        <li>Lancaster</li>
+                        <li>Skincare</li>
+                        <li>Lancaster - Cleanser</li>
+                        <li>Softening Cleansing Milk</li>
+                        <li>400ml/13.5oz</li>
                     </ul> <br> <br> <br>
 
                     <h1 class="page-title" id="toning">Toners we recommend </h1>
@@ -374,9 +375,9 @@
                         Skin type: Dry, All Skin Types
                     </p>
 
-                    <h3>About this item:</h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item:</h3>
 
-                    <ul>
+                    <ul class="unl">
                         <li>CLEANSING Natural Plant Based Pure Thermal Spring Water Toning Essence For Face. Best Toning Essence for Day and Night - For A More Refreshed Appearance</li>
                         <li>Helps prevent congestion. A deep-action cleansing mask with an exfoliating effect to refine the complexion</li>
                         <li>Apply thick layer to clean skin for 5-10 min. Wet fingertips, massage in circles, rinse with water. Use2x a week</li>
@@ -397,12 +398,12 @@
                         Product benefits: Hydrabio Tonic Lotion's use leaves your dehydrated skin clear and moisturized. <br>
                     </p>
 
-                    <h3>About this item: </h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item: </h3>
 
-                    <ul>
-                        <li style="list-style-type: circle;">Developed in the Bioderma Research laboratories, the Aquagenium patent in Hydrabio Tonic Lotion helps to improve the natural moisturising capacities of the skin.</li>
-                        <li style="list-style-type: circle;">Hydrabio Tonic Lotion's use leaves your dehydrated skin clear and moisturized</li>
-                        <li style="list-style-type: circle;">Soak a cotton pad and apply on your face and eyes after cleansing. Use morning and evening, every day of the week.</li>
+                    <ul class="unl">
+                        <li>Developed in the Bioderma Research laboratories, the Aquagenium patent in Hydrabio Tonic Lotion helps to improve the natural moisturising capacities of the skin.</li>
+                        <li>Hydrabio Tonic Lotion's use leaves your dehydrated skin clear and moisturized</li>
+                        <li>Soak a cotton pad and apply on your face and eyes after cleansing. Use morning and evening, every day of the week.</li>
                     </ul>
 
                     <br> 
@@ -424,9 +425,9 @@
                         Recommended uses for product: Vitamin, Blemishes <br>
                     </p>
 
-                    <h3>About this item:</h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item:</h3>
 
-                    <ul>
+                    <ul class="unl">
                         <li>Efficacy: This product can effectively improve the skin defects, repair the reddening skin, 
                             even the rough pores, balance the oil secretion, reduce the facial oil light, and create the smooth and bright skin for you.</li>
                         <li>Usage: After skin care in the morning and evening, apply a small amount of this product to the face before taking care of the oil, 
@@ -451,12 +452,12 @@
                         Speficic uses for product: Anti aging benefits <br>
                     </p>
 
-                    <h3>Patch testing: </h3>
-                    <ul>
-                        <li style="list-style-type: circle;">Apply a small amount of the product onto a clean area of skin on the upper forearm.</li>
-                        <li style="list-style-type: circle;">Keep the area dry.</li>
-                        <li style="list-style-type: circle;">If the product has a specified duration of use, rinse off after this time has elapsed. Otherwise rinse off after 24 hours.</li>
-                        <li style="list-style-type: circle;">If any redness, burning, itching, blistering or irritation is observed at any time throughout the test, do not use the product.</li>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;"> Patch testing: </h3>
+                    <ul class="unl">
+                        <li>Apply a small amount of the product onto a clean area of skin on the upper forearm.</li>
+                        <li>Keep the area dry.</li>
+                        <li>If the product has a specified duration of use, rinse off after this time has elapsed. Otherwise rinse off after 24 hours.</li>
+                        <li>If any redness, burning, itching, blistering or irritation is observed at any time throughout the test, do not use the product.</li>
                     </ul>
 
                     <h1 class="page-title" id="moisturizing">Moisturizers we recommend</h1>
@@ -475,9 +476,9 @@
                         Use for: Face <br>
                     </p>
 
-                    <h3>About his item:</h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About his item:</h3>
 
-                    <ul>
+                    <ul class="unl">
                         <li>1.7-fluid ounce jar of Neutrogena Hydro Boost 
                             hydrating water-gel face moisturizer with hyaluronic acid to hydrate dry skin</li>
                         <li>Gel moisturizer formula provides hydration to skin, leaving it looking smooth and supple day after day</li> 
@@ -501,12 +502,12 @@
                         Specific uses for product: Ance, Eczema, Dryness <br>
                     </p>
 
-                    <h3>About this item: </h3>
+                    <h3 style="color: rgb(175, 88, 132); font-style: italic;">About this item: </h3>
 
-                    <ul>
-                        <li style="list-style-type: circle;">[ HYALURONIC ACID MOISTURIZER ] With hyaluronic acid, ceramides and MVE technology for 24 hour hydration. </li>
-                        <li style="list-style-type: circle;">[ DERMATOLOGIST RECOMMENDED ] CeraVe Skincare is developed with dermatologists and has products suitable for dry skin, sensitive skin, oily skin, acne-prone, and more.</li>
-                        <li style="list-style-type: circle;">[ GENTLE DAILY MOISTURIZER ] For face and body or can be used as a hand cream for dry skin relief.</li>
+                    <ul class="unl">
+                        <li>[ HYALURONIC ACID MOISTURIZER ] With hyaluronic acid, ceramides and MVE technology for 24 hour hydration. </li>
+                        <li>[ DERMATOLOGIST RECOMMENDED ] CeraVe Skincare is developed with dermatologists and has products suitable for dry skin, sensitive skin, oily skin, acne-prone, and more.</li>
+                        <li>[ GENTLE DAILY MOISTURIZER ] For face and body or can be used as a hand cream for dry skin relief.</li>
                     </ul>
                 </div>   
             </article>
