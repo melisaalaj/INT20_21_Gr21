@@ -97,7 +97,18 @@
                 border-radius:20px;
                 box-shadow:5px5px5px#eee;
                 text-shadow:none;
-            }  
+            } 
+            #button{
+                display: inline-block;
+                background-color: rgb(136, 44, 105);
+                color:#ffffff;
+                border-radius: 5px;
+                text-align:center;
+                margin-top:2px;
+                padding: 5px 15px;
+            }
+             
+
         </style>
     </head>
     <body style="background-image: url('./background.jpg');">
@@ -512,10 +523,58 @@
                 </div>   
             </article>
         </section>
+            
+    <div class="container">
+      
+        <p><em>Feel free to add your favorite product:</em></p>
+           
+        <form name="toDoList">
+          <input type="text" name="ListItem"/>
+        </form>
         
+        <div id="button" style=
+      
+        >Add</div>
+        <br/>
+        <ol style="padding-left: 20px  " ></ol>
+          
+        
+        
+        </div>
+        <script>
+            $(document).ready(
+        function(){
+            $('#button').click(
+                function(){
+                    var toAdd = $('input[name=ListItem]').val();
+                     $('ol').append('<li>' + toAdd + '</li>');
+                });
+           
+           $("input[name=ListItem]").keyup(function(event){
+              if(event.keyCode == 13){
+                $("#button").click();
+              }         
+          });
+          
+          $(document).on('dblclick','li', function(){
+            $(this).toggleClass('strike').fadeOut('slow');    
+          });
+          
+          $('input').focus(function() {
+            $(this).val('');
+          });
+          
+          $('ol').sortable();  
+          
+        }
+    );
+        </script>
+       
+ 
         <footer>
             <p>Your Skin Care guide Web Design &copy; 2021 </p>
         </footer>
+        
 
     </body>
 </html>

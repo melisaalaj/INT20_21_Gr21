@@ -3,13 +3,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Contact form</title>
-
-  
+    <title>Document</title>
+    <script src="script.js"></script>
+   
 </head>
 <body>
+  
     <style>
+
         *{
     font-family:Arial;
 }
@@ -24,7 +25,7 @@ body{
         }
 
 form{
-    max-width:650px ;
+    max-width:550px ;
     width: 90%;
     background-color: white;
     margin:17vh auto 0 auto;
@@ -38,7 +39,7 @@ h1{
   }
   label{
     display:block;
-    margin:5px 0;
+    margin:20px 0;
   }
   input,textarea{
     width:100%;
@@ -60,8 +61,8 @@ h1{
 
    }
    input[type="submit"]{
-       margin-top:90px;
-       width: 100%;
+       margin-top:80px;
+       width:100%;
        max-width:200%;
        background: rgb(255,0,106);
        color:white;
@@ -70,97 +71,41 @@ h1{
        border-radius: 3px;
 
    }
-   .wrapper {
-  width: 400px;
-  margin: 50px auto;
-  padding: 40px;
-  border-radius: 8px;
-  background: white;
-  box-shadow: 0px 10px 40px 0px rgb(235, 232, 234);
-}
-input[type="text"]{
-  padding: 10px;
-  margin: 10px auto;
-  display: block;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  background: none;
-  width: 274px;
-  color: black;
-}
-.controls {
-  width: 294px;
-  margin: 15px auto;
-}
+   .error{
+    color:red;
 
-#remove_fields {
-  float: right;
 }
-.controls a i.fa-minus {
-  margin-right: 5px;
+.error-border{
+    border-bottom:1px solid red;
 }
-a {
-  color: rgb(255,0,106);
-  text-decoration: none;
-}
-
-h1 {
-  text-align: center;
-  font-size: 48px;
-  color: #232c3d;
+#success{
+    color:green;
 }
     </style>
-   
-        <form >
+    <div id="overlay">
+        <form onsubmit="event.preventDefault(); validateForm()">
             <h1>Contact Us</h1>
             <label for="name">Name:</label>
             <input type="text" id="name" placeholder="Your name">
+            <small class="error"></small>
             
             <label for="email">Email:</label>
             <input type="text" id="email" placeholder="Your email">
-             </div>
-            <div class="wrapper">
-                <div id="survey_options">
-                
-                  <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Phone number">
-                  <input type="text" name="survey_options[]" class="survey_options" size="50" placeholder="Another Field">
-                </div>
-                <div class="controls">
-                  <a href="#" id="add_more_fields"><i class="fa fa-plus"></i>Add More</a>
-                  <a href="#" id="remove_fields"><i class="fa fa-plus"></i>Remove Field</a>
-                </div>
-              </div>
+            <small class="error"></small>
             
-              <label for="message">Message:</label>
-              <textarea id="message"  placeholder="Your message" rows="6"></textarea>
-  
-            <input type="submit" value="Send Message">
+            <label for="message">Message:</label>
+            <textarea id="message"  placeholder="Your message" rows="6"></textarea>
+            <small class="error"></small>
+
+            <div class="center">
+                <input type="submit" value="Send Message">
+                <p id="success"></p>
+                
+            </div>
            
 
         </form>
-        
-  <script> 
-  var survey_options = document.getElementById('survey_options');
-var add_more_fields = document.getElementById('add_more_fields');
-var remove_fields = document.getElementById('remove_fields');
-
-add_more_fields.onclick = function(){
-	var newField = document.createElement('input');
-	newField.setAttribute('type','text');
-	newField.setAttribute('name','survey_options[]');
-	newField.setAttribute('class','survey_options');
-	newField.setAttribute('siz',50);
-	newField.setAttribute('placeholder','Another Field');
-	survey_options.appendChild(newField);
-}
-
-remove_fields.onclick = function(){
-	var input_tags = survey_options.getElementsByTagName('input');
-	if(input_tags.length > 2) {
-		survey_options.removeChild(input_tags[(input_tags.length) - 1]);
-	}
-}
-        </script>
+    </div>
 
 </body>
 </html>
