@@ -11,6 +11,14 @@
             $("#opening").slideToggle("slow");
           });
         });
+
+        $(document).ready(function(){
+            $('#button').click(
+                function(){
+                    var toAdd = $('input[name=ListItem]').val();
+                     $('ol').append('<li>' + toAdd + '</li>');
+                });
+            });
         
         </script>
 
@@ -106,6 +114,14 @@
                 text-align:center;
                 margin-top:2px;
                 padding: 5px 15px;
+            } 
+            
+            #button:hover{
+                background:#ac5b81;
+                color:#fff;
+                border:1pxsolid#eee;
+                box-shadow:5px5px5px#eee;
+                text-shadow:none;
             }
              
 
@@ -541,34 +557,6 @@
         
         
         </div>
-        <script>
-            $(document).ready(
-        function(){
-            $('#button').click(
-                function(){
-                    var toAdd = $('input[name=ListItem]').val();
-                     $('ol').append('<li>' + toAdd + '</li>');
-                });
-           
-           $("input[name=ListItem]").keyup(function(event){
-              if(event.keyCode == 13){
-                $("#button").click();
-              }         
-          });
-          
-          $(document).on('dblclick','li', function(){
-            $(this).toggleClass('strike').fadeOut('slow');    
-          });
-          
-          $('input').focus(function() {
-            $(this).val('');
-          });
-          
-          $('ol').sortable();  
-          
-        }
-    );
-        </script>
        
  
         <footer>
