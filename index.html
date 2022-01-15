@@ -21,6 +21,38 @@
         $("#togglep").toggle(1000);
         });
         });
+
+        $(document).ready(function(){
+        $("#text").mouseenter(function(){
+        $("#text").text("Built your skin care routine! ");
+        });
+        });
+
+        $(document).ready(function(){
+        $("#href").click(function(){
+            alert("Do you wanna learn about your skin: " + $("#href").text());
+        });
+        });
+        
+        var w;
+
+        function startWorker() {
+        if (typeof(Worker) !== "undefined") {
+        if (typeof(w) == "undefined") {
+            w = new Worker("demo_workers.js");
+        }
+         w.onmessage = function(event) {
+         document.getElementById("result").innerHTML = event.data;
+        };
+        } else {
+        document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+        }
+       }
+
+       function stopWorker() {
+        w.terminate();
+       w = undefined;
+}
         </script>
 </head>
 <body>
@@ -255,7 +287,7 @@
                 <div class="container">
                 <h1 class="page-title"> We are here to guide you through your skin care journey </h1>
                 <p>
-                    The first thing to know when taking care of your skin is the <a href="https://askthescientists.com/skin-type-quiz/" target="_blank">type</a> of your skin.
+                    The first thing to know when taking care of your skin is the <a href="https://askthescientists.com/skin-type-quiz/" target="_blank" id="href">type</a> of your skin.
                     Only when you know the type of your skin, you will be able to properly take care of it.
                 </p>
                 <h4 style="font-style: italic; color: #974862 ; font-size: 1.1em;"> Skin care steps:  </h4>
@@ -497,7 +529,7 @@
                 </tbody>
                 </table>
 
-                <h1 class="page-title">A guide on when to use products: </h1>
+                <h1 class="page-title" id="text">A guide on when to use products: </h1>
                 <table class="table-content2">
                     <thead>
                         <tr>
@@ -539,6 +571,9 @@
                         </tr>
                     </table>
 
+                    <p>Count numbers: <output id="result"></output></p>
+                   <button onclick="startWorker()">Start Worker</button>
+                   <button onclick="stopWorker()">Stop Worker</button>
                 </div>
             </article>
         </section>  
@@ -563,6 +598,8 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }
+
+
 
 function showError(error) {
      switch(error.code) {

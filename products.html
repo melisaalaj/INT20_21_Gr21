@@ -20,10 +20,25 @@
                 });
         });
         
+        $(document).ready(function(){
+	    $("#pic1").mousemove(function(){
+	    $("#pic1").fadeIn();
+	    $("#pic2").fadeIn(1000);
+	    $("#pic3").fadeIn(2000);
+	    });
+	    });
+
         </script>
 
         <style>
-            .float-img {
+            #pic1, #pic2, #pic3 {
+                margin-right: 30px; 
+                margin-bottom: 5px;
+                padding: 2px;
+                border-radius: 35px;
+                box-shadow: 4px 4px rgb(194, 190, 190);
+            }
+            .float-img  {
                 float: left; 
                 margin-right: 30px; 
                 margin-bottom: 5px;
@@ -315,6 +330,12 @@
                     </ul>         
                     
                     <h1 class="page-title" id="cleansing"> Cleansers we recommend</h1>
+                    <div style="width: 100%;">
+                    <img src="./CeraVE.jpg" alt="cerave" width="350" height="400" id="pic1">
+                    <img src="./LaRoche.jpg" alt="La Roche" width="350"  height="400" id="pic2" style="display: none;">
+                    <img src="./babor.jpg" alt="babor toner" width="350"  height="400" id="pic3" style="display: none;">
+                </div>
+                    <h2 class="page-subt">  CeraVe Hydrating Cleanser</h2>
                     <h2 class="page-subt">  CeraVe Hydrating Cleanser</h2>
 
                     <a href="https://gjirafamall.com/kozmetike/kujdes-per-lekure-4/perkujdesje-per-trup-2/losione-2/losion-qumesht-hidratues-per-lekure-normale-dhe-te-thate-cerave-236-ml#SearchResults" target="_break">
